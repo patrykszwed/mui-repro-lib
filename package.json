@@ -1,0 +1,30 @@
+{
+  "name": "mui-repro-lib",
+  "version": "1.0.0",
+  "description": "A simple reproduction library for mui/material-ui#37183.",
+  "repository": "https://github.com/nickiaconis/mui-repro-lib",
+  "main": "./lib/cjs/index.cjs.js",
+  "module": "./lib/esm/index.js",
+  "types": "./lib/types/index.d.ts",
+  "license": "https://github.com/nickiaconis/mui-repro-lib/blob/main/LICENSE",
+  "scripts": {
+    "build": "rimraf lib && node bundle.js && tsc --emitDeclarationOnly --importHelpers false --outDir lib/types"
+  },
+  "dependencies": {
+    "@emotion/react": "^11.11.0",
+    "@emotion/styled": "^11.11.0",
+    "@mui/material": "^5.12.3"
+  },
+  "devDependencies": {
+    "@types/react": "^17.0.0",
+    "esbuild": "^0.17.18",
+    "react": "^17.0.0",
+    "react-dom": "^17.0.0",
+    "rimraf": "^5.0.0",
+    "typescript": "^5.0.4"
+  },
+  "peerDependencies": {
+    "react": "^17.0.0",
+    "react-dom": "^17.0.0"
+  }
+}
