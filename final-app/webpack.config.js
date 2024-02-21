@@ -1,10 +1,9 @@
 const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-    mode: 'production',
-    entry: './src/index.js',
     output: {
-        path: path.resolve(__dirname, 'dist'),
+        path: path.join(__dirname, 'dist'),
         filename: 'bundle.js'
     },
     module: {
@@ -18,7 +17,12 @@ module.exports = {
             }
         ]
     },
-    resolve: {
-        extensions: ['.js', '.jsx']
+    plugins: [
+        new HtmlWebpackPlugin({
+            template: "src/index.html", // to import index.html file inside index.js
+        }),
+    ],
+    devServer: {
+        port: 3000
     }
 };
